@@ -2,43 +2,57 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hello Bulma!</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-<script defer
-	src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Lista!</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Wide card with share menu button -->
+	<style>
+		.demo-card-wide.mdl-card {
+			width: 512px;
+		}
+
+		.demo-card-wide>.mdl-card__title {
+			color: #fff;
+			height: 176px;
+			background: url('../assets/demos/welcome_card.jpg') center / cover;
+		}
+
+		.demo-card-wide>.mdl-card__menu {
+			color: #fff;
+		}
+	</style>
 </head>
 
 <body>
-	<section class="section">
-		<div class="container">
-			<h1 class="title">
-				привет <span th:text="${miNombre}">Mundo</span> Spring
-			</h1>
-		</div>
-		<div>
-			<table class="table">
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Usuario</th>
-						<th>nombre completo</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr th:each="usuarioIndex : ${listUsuarios}">
-						<td th:text="${usuarioIndex.id}"></td>
-						<td th:text="${usuarioIndex.nombreUsuario}"></td>
-						<td th:text="${usuarioIndex.nombreCompleto}"></td>
-					</tr>
-				<tbody>
-			</table>
-
-		</div>
-		<a class="btn" href="/ths/nuevo">Nuevo usuario</a>
-	</section>
+	<div class="container center">
+		<h1 class="display-4 text-center">Lista de los usuarios</h1>
+		<section class="section">
+			<div>
+				<table class="table table-bordered ">
+					<thead>
+						<tr>
+							<th class="text-center">ID</th>
+							<th class="text-center">Usuario</th>
+							<th class="text-center">Nombre completo</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="usuarioIndex : ${listUsuarios}">
+							<td class="text-center" th:text="${usuarioIndex.id}"></td>
+							<td class="text-center"th:text="${usuarioIndex.nombreUsuario}"></td>
+							<td class="text-center" th:text="${usuarioIndex.nombreCompleto}"></td>
+						</tr>
+					<tbody>
+				</table>
+			</div>
+			<a class="btn btn-lg btn-block btn-primary" href="/ths/nuevo">Nuevo usuario</a>
+		</section>
+	</div>
+	<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </body>
 
 </html>

@@ -2,36 +2,47 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Hello Bulma!</title>
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
-<script defer
-	src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Resultado!</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<!-- Wide card with share menu button -->
+	<style>
+		.demo-card-wide.mdl-card {
+			width: 512px;
+		}
+
+		.demo-card-wide>.mdl-card__title {
+			color: #fff;
+			height: 176px;
+			background: url('../assets/demos/welcome_card.jpg') center / cover;
+		}
+
+		.demo-card-wide>.mdl-card__menu {
+			color: #fff;
+		}
+	</style>
 </head>
+
 <body>
-	<div class="panel panel-info">
-		<div class="panel-heading"><h3>Usuario creado!</h3>
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Usuario</th>
-						<th>nombre completo</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td th:text="${usuario.id}"></td>
-						<td th:text="${usuario.nombreUsuario}"></td>
-						<td th:text="${usuario.nombreCompleto}"></td>
-					</tr>
-				<tbody>
-			</table>
-		</div>
+
+	<div class="container center col-sm-7">
+		<h1 class="display-2 text-center">Usuario registrado</h1><br>
+		<blockquote class="blockquote">
+			<p class="display-4"><strong>ID: </strong><span class="mb-0" th:text="${usuario.id}"></span></p>
+			<p class="display-4"><strong>Usuario: </strong><span class="mb-0" th:text="${usuario.nombreUsuario}"></span>
+			</p>
+			<p class="display-4"><strong>Nombre completo: </strong><span class="mb-0"
+					th:text="${usuario.nombreCompleto}"></span></p>
+		</blockquote>
+		<br>
+		<a class="btn btn-lg btn-block btn-primary" href="/ths/nuevo">Volver</a>
+		</section>
 	</div>
 	</br>
-	<a class="btn" href="/ths">Volver</a>
 </body>
+
 </html>
