@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello Bulma!</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+<script defer
+	src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+	<section class="section">
+		<div class="container">
+			<h1 class="title">
+				привет <span th:text="${miNombre}">Mundo</span> Spring
+			</h1>
+		</div>
+		<div>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Usuario</th>
+						<th>nombre completo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="usuarioIndex : ${listUsuarios}">
+						<td th:text="${usuarioIndex.id}"></td>
+						<td th:text="${usuarioIndex.nombreUsuario}"></td>
+						<td th:text="${usuarioIndex.nombreCompleto}"></td>
+					</tr>
+				<tbody>
+			</table>
+
+		</div>
+		<a class="btn" href="/ths/nuevo">Nuevo usuario</a>
+	</section>
+</body>
+
+</html>

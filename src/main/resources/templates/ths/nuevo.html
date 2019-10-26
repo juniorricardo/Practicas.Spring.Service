@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello Bulma!</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+<script defer
+	src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+<div><h1>Nuevo usuario:</h1>
+</div>
+	<form action="#" th:action="@{/ths/crear}" th:object="${nusuario}"
+		method="post">
+		<!-- <input type="hidden" th:field="${usuario.id}"> -->
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">ID</label>
+			<div class="col-sm-6">
+				<!-- <input type="text" th:field="${usuario.nombrecompleto}"> -->
+				<input type="text" th:field="*{id}" id="id">
+<!-- 				<p type:if="${#field.hasErrors('id')}" th:error="*{id}" class="alert"/> -->
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">Usuario</label>
+			<div class="col-sm-6">
+				<!-- <input type="text" th:field="${usuario.nombrecompleto}"> -->
+				<input type="text" th:field="*{nombreUsuario}" id="usuario" required="required">
+<!-- 				<p type:if="${#field.hasErrors('usuario')}" th:error="*{nombreUsuario}" class="alert"/> -->
+			</div>
+		</div>
+		<div class="form-group row">
+			<label class="col-sm-2 col-form-label">Nombre completo</label>
+			<div class="col-sm-6">
+				<!-- <input type="text" th:field="${usuario.nombrecompleto}"> -->
+				<input type="text" th:field="*{nombreCompleto}" id="nombrecompleto">
+<!-- 				<p type:if="${#field.hasErrors('nombrecompleto')}" th:error="*{nombreCompleto}" class="alert"/> -->
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-6">
+				<button type="submit" class="btn btn-outline-primary">Crear</button>
+			</div>
+		</div>
+	</form>
+
+	<!--JavaScript at end of body for optimized loading-->
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+</body>
+
+</html>

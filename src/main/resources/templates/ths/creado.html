@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hello Bulma!</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+<script defer
+	src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+	<div class="panel panel-info">
+		<div class="panel-heading"><h3>Usuario creado!</h3>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Usuario</th>
+						<th>nombre completo</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td th:text="${usuario.id}"></td>
+						<td th:text="${usuario.nombreUsuario}"></td>
+						<td th:text="${usuario.nombreCompleto}"></td>
+					</tr>
+				<tbody>
+			</table>
+		</div>
+	</div>
+	</br>
+	<a class="btn" href="/ths">Volver</a>
+</body>
+</html>
