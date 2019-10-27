@@ -8,8 +8,8 @@
 		<version>2.2.0.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.panda.prueba</groupId>
-	<artifactId>usuario</artifactId>
+	<groupId>com.curso.java.spring</groupId>
+	<artifactId>registrouser</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>usuario</name>
