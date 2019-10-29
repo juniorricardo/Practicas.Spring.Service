@@ -41,13 +41,10 @@
 
         <div class="col s4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, molestias quidem autem, doloribus enim aut
-            amet nam ex fuga non, quos nisi consectetur sed obcaecati aspernatur quasi placeat optio. Nisi!
-
-
             <div class="container">
                 <section class="section">
                     <div>
-                        <form action="#" th:action="@{/ths/nuevo/registrolista}" th:object="${nusuario}" method="post">
+                        <form action="#" th:action="@{/ths/new/registrolista}" th:object="${nusuario}" method="post">
                             <div class="form-group row">
                                 <h1 class="display-4 text-center col-10">Nuevo usuario <i class="fas fa-user-plus"></i>
                                 </h1>
@@ -65,7 +62,6 @@
                                 </div>
                                 <div class="col-10">
                                     <div class="btn-group btn-group-fill">
-
                                         <button type="submit" class="btn btn-primary">Crear <i
                                                 class="fas fa-paper-plane"></i></button>
                                         <button type="reset" class="btn btn-secondary">Limpiar <i
@@ -82,8 +78,6 @@
 
         <div class="col s7">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quidem delectus fugiat eius odit.
-            Blanditiis autem quam eligendi ex asperiores iure neque sed, similique adipisci sequi consequuntur quo!
-            Iste, vitae.
             <div class="container center">
                 <h1 class="display-4 text-center">Lista de los usuarios <i class="fas fa-users"></i></h1>
                 <section class="section">
@@ -97,7 +91,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr th:each="usuarioIndex : ${listUsuarios}">
+                                <tr th:each="usuarioIndex : ${newListaUsuarios}">
                                     <td class="text-center" th:text="${usuarioIndex.id}"></td>
                                     <td class="text-center" th:text="${usuarioIndex.nombreUsuario}"></td>
                                     <td class="text-center" th:text="${usuarioIndex.nombreCompleto}"></td>

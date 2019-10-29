@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.*;
 
-//@Controller
+@Controller
 @RequestMapping("/ths")
 public class DemoController {
 	
@@ -44,4 +44,20 @@ public class DemoController {
 		return "ths/creado";
 	}
 	
+	@GetMapping("/new")
+	public ModelAndView nuevaLista() {
+		ModelAndView mav = new ModelAndView();
+		mav.addObject("newListaUsuarios", miRegistro.getRegistro());
+		mav.addObject("nusuario", new Usuario());
+	    mav.setViewName("ths/new/registrolista");
+	    return mav;
+	}
+	@PostMapping("/new")
+	public String nuevoCrear(Usuario nusuario, Model m){
+		miRegistro.setRegistro(nusuario);
+		m.addAttribute("nusuario", new Usuario());
+		m.addAttribute("newListaUsuarios", miRegistro.getRegistro());
+		return "ths/new/registrolista";
+	}
+
 }

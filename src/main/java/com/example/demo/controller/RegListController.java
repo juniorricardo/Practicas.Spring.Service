@@ -11,11 +11,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.*;
 
-@Controller
-@RequestMapping("/ths/nuevo")
+//@Controller
+//@RequestMapping("/ths/nuevo")
 public class RegListController {
 	
-	@Autowired
+	/*@Autowired
 	private RegistroService miRegistro;
 	
 	@GetMapping("")
@@ -26,5 +26,21 @@ public class RegListController {
 	    mav.setViewName("ths/nuevo/registrolista");
 	    return mav;
 	}
+	@GetMapping("/registrolista")
+	public String nuevo(Model modelo) {
+		modelo.addAttribute("nusuario", new Usuario());
+		return "ths/nuevo/registrolista";
+	}
+
+	@PostMapping("/crear")
+	public String cargar(Usuario nusuario, Model m) {
+		miRegistro.setRegistro(nusuario);
+		m.addAttribute("usuario",nusuario);
+		return "ths/nuevo/registrolista";
+	}
+	@PostMapping("/creado")
+	public String creado(@RequestParam("nusuario")Usuario usuario) {
+		return "ths/nuevo/creado";
+	}*/
 	
 }
