@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registro y lista de usuarios!</title>
+    <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            background-color: #3498db;
+            font-family: Arial, sans-serif;
+            padding: 50px
+        }
+
+        .container {
+            margin: 20px auto;
+            padding: 10px;
+            height: auto;
+            background-color: #fff;
+            border-radius: 5px
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container row">
+
+        <div class="col s4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, molestias quidem autem, doloribus enim aut
+            amet nam ex fuga non, quos nisi consectetur sed obcaecati aspernatur quasi placeat optio. Nisi!
+
+
+            <div class="container">
+                <section class="section">
+                    <div>
+                        <form action="#" th:action="@{/ths/nuevo/registrolista}" th:object="${nusuario}" method="post">
+                            <div class="form-group row">
+                                <h1 class="display-4 text-center col-10">Nuevo usuario <i class="fas fa-user-plus"></i>
+                                </h1>
+                                <div class="form-group col-10">
+                                    <input type="text" th:field="*{id}" class="form-control" placeholder="Ingrese Id"
+                                        required="required">
+                                </div>
+                                <div class="form-group col-10">
+                                    <input type="text" th:field="*{nombreUsuario}" id="id" class="form-control"
+                                        placeholder="Usuario" required="required">
+                                </div>
+                                <div class="form-group col-10">
+                                    <input type="text" th:field="*{nombreCompleto}" class="form-control"
+                                        placeholder="Nombre completo">
+                                </div>
+                                <div class="col-10">
+                                    <div class="btn-group btn-group-fill">
+
+                                        <button type="submit" class="btn btn-primary">Crear <i
+                                                class="fas fa-paper-plane"></i></button>
+                                        <button type="reset" class="btn btn-secondary">Limpiar <i
+                                                class="fas fa-eraser"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+        <div class="col s7">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quidem delectus fugiat eius odit.
+            Blanditiis autem quam eligendi ex asperiores iure neque sed, similique adipisci sequi consequuntur quo!
+            Iste, vitae.
+            <div class="container center">
+                <h1 class="display-4 text-center">Lista de los usuarios <i class="fas fa-users"></i></h1>
+                <section class="section">
+                    <div>
+                        <table class="table table-bordered ">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">ID</th>
+                                    <th class="text-center">Usuario</th>
+                                    <th class="text-center">Nombre completo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="usuarioIndex : ${listUsuarios}">
+                                    <td class="text-center" th:text="${usuarioIndex.id}"></td>
+                                    <td class="text-center" th:text="${usuarioIndex.nombreUsuario}"></td>
+                                    <td class="text-center" th:text="${usuarioIndex.nombreCompleto}"></td>
+                                </tr>
+                            <tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</body>
+
+</html>

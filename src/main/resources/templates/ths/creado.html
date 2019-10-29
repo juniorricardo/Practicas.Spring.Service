@@ -2,38 +2,37 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Resultado!</title>
-<link rel="stylesheet"
-	href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-	crossorigin="anonymous">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Resultado!</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/3a9f5153e2.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
 	<div class="container center col-sm-7">
-		<h1 class="display-2 text-center">Usuario registrado</h1>
+
+		<h1 class="display-2 text-center input-contains-icon col">Usuario registrado <span class="icon col-sm"><i
+					class="fas fa-user-check"></i></span></h1>
 		<br>
 		<blockquote class="blockquote">
 			<p class="display-4">
 				<strong>ID: </strong><span class="mb-0" th:text="${usuario.id}"></span>
 			</p>
 			<p class="display-4">
-				<strong>Usuario: </strong><span class="mb-0"
-					th:text="${usuario.nombreUsuario}"></span>
+				<strong>Usuario: </strong><span class="mb-0" th:text="${usuario.nombreUsuario}"></span>
 			</p>
 			<p class="display-4">
-				<strong>Nombre completo: </strong><span class="mb-0"
-					th:text="${usuario.nombreCompleto}"></span>
+				<strong>Nombre completo: </strong><span class="mb-0" th:text="${usuario.nombreCompleto}"></span>
 			</p>
 		</blockquote>
-		<br> <a class="btn btn-lg btn-block btn-primary"
-			href="/ths/nuevo">Volver</a>
+		<br> <a class="btn btn-lg btn-block btn-primary" href="/ths/nuevo">Volver <i class="fas fa-reply"></i></a>
+		<a class="btn btn-lg btn-block btn-primary" href="/ths">Mostrar lista <i class="fas fa-address-book"></i></a>
+		<br>
 	</div>
-	<br>
 </body>
 
 </html>

@@ -11,9 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.example.demo.model.*;
 
-//@Controller
-@RequestMapping("/ths")
-public class DemoController {
+@Controller
+@RequestMapping("/ths/nuevo")
+public class RegListController {
 	
 	@Autowired
 	private RegistroService miRegistro;
@@ -23,25 +23,8 @@ public class DemoController {
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("listUsuarios", miRegistro.getRegistro());
 	    mav.addObject("miNombre", "Junior");
-	    mav.setViewName("ths/lista");
+	    mav.setViewName("ths/nuevo/registrolista");
 	    return mav;
-	}
-	@GetMapping("/nuevo")
-	public String nuevo(Model modelo) {
-		modelo.addAttribute("nusuario", new Usuario());
-		return "ths/nuevo";
-	}
-
-	@PostMapping("/crear")
-	public String cargar(Usuario nusuario, Model m) {
-		miRegistro.setRegistro(nusuario);
-		m.addAttribute("usuario",nusuario);
-		return "ths/creado";
-	}
-	@PostMapping("/creado")
-//	public String creado(@ModelAttribute Usuario usuario) {
-	public String creado(@RequestParam("nusuario")Usuario usuario) {
-		return "ths/creado";
 	}
 	
 }
